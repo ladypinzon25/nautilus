@@ -1,0 +1,65 @@
+.home {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.home__information-column {
+  width: 70vw;
+  height: 100vh;
+  border-right: solid rgba(0, 0, 0, .3) 1px;
+  overflow: hidden;
+}
+
+.home__options-column {
+  width: 30vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.home__title {
+  font-size: 36px;
+  color: rgba(0, 0, 0, .87);
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  margin: 5px 0 20px;
+}
+
+.home__main-title {
+  font-size: 96px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, .87);
+  margin: 5px;
+}
+
+.home__button {
+
+  /*box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);*/
+  cursor: pointer;
+}
+
+.home__chips-container {
+  width: auto;
+  position: absolute;
+  bottom: 20px;
+  left: 2vw;
+  display: flex;
+}
+
+.home__learn-more-option {
+  position: absolute;
+  right: 2vw;
+  bottom: 20px;
+}
+
+.home__learn-more-button {
+  margin: 10px!important;
+  border-style: hidden!important;
+  cursor: pointer;
+}

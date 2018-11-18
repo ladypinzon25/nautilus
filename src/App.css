@@ -1,0 +1,74 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #222;
+  height: 45px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 2em;
+  margin-top: 0;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.navio {
+  z-index: 10 !important;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 403px;
+  height: 340px!important;
+  overflow-x: scroll;
+  background-color: #edf0f4;
+}
+
+.navio > #navio {
+  margin-top: 20px;
+}
+
+#voyager-embed {
+  height: 100vh;
+}
+
+.navio canvas {
+  position: absolute;
+  left: 0 !important;
+
+}
+
+.Pane.vertical.Pane1 {
+  width: 200px!important;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-height: 870px) {
+  #voyager-embed {
+    height: 120vh;
+  }
+  .navio {
+    bottom: -20vh;
+  }
+}
+
+@media only screen and (max-height: 720px) {
+  #voyager-embed {
+    height: 140vh;
+  }
+  .navio {
+    bottom: -40vh;
+  }
+}
