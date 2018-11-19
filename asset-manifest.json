@@ -1,7 +1,7 @@
 {
-  "main.css": "/nautilus/static/css/main.0771ab2e.chunk.css",
-  "main.js": "/nautilus/static/js/main.916031af.chunk.js",
-  "main.js.map": "/nautilus/static/js/main.916031af.chunk.js.map",
+  "main.css": "/nautilus/static/css/main.495eb799.chunk.css",
+  "main.js": "/nautilus/static/js/main.16daff5c.chunk.js",
+  "main.js.map": "/nautilus/static/js/main.16daff5c.chunk.js.map",
   "static/js/1.a1cb2a29.chunk.js": "/nautilus/static/js/1.a1cb2a29.chunk.js",
   "static/js/1.a1cb2a29.chunk.js.map": "/nautilus/static/js/1.a1cb2a29.chunk.js.map",
   "runtime~main.js": "/nautilus/static/js/runtime~main.8728ecbd.js",
@@ -11,8 +11,8 @@
   "static/media/fontawesome-webfont.ttf?v=4.7.0": "/nautilus/static/media/fontawesome-webfont.b06871f2.ttf",
   "static/media/fontawesome-webfont.svg?v=4.7.0": "/nautilus/static/media/fontawesome-webfont.912ec66d.svg",
   "static/media/fontawesome-webfont.woff2?v=4.7.0": "/nautilus/static/media/fontawesome-webfont.af7ae505.woff2",
-  "static/css/main.0771ab2e.chunk.css.map": "/nautilus/static/css/main.0771ab2e.chunk.css.map",
+  "static/css/main.495eb799.chunk.css.map": "/nautilus/static/css/main.495eb799.chunk.css.map",
   "index.html": "/nautilus/index.html",
-  "precache-manifest.e39fa3394e0e3dbff1f904729825d04e.js": "/nautilus/precache-manifest.e39fa3394e0e3dbff1f904729825d04e.js",
+  "precache-manifest.5f36b15a17bdd8579d2df73debec9e1f.js": "/nautilus/precache-manifest.5f36b15a17bdd8579d2df73debec9e1f.js",
   "service-worker.js": "/nautilus/service-worker.js"
 }

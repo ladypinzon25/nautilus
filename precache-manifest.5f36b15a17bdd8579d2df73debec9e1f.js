@@ -24,19 +24,19 @@ self.__precacheManifest = [
     "url": "/nautilus/static/js/runtime~main.8728ecbd.js"
   },
   {
-    "revision": "916031af5c1b0a2f74b1",
-    "url": "/nautilus/static/js/main.916031af.chunk.js"
+    "revision": "16daff5cb08451fbf6df",
+    "url": "/nautilus/static/js/main.16daff5c.chunk.js"
   },
   {
     "revision": "a1cb2a2963c2c5f56d06",
     "url": "/nautilus/static/js/1.a1cb2a29.chunk.js"
   },
   {
-    "revision": "916031af5c1b0a2f74b1",
-    "url": "/nautilus/static/css/main.0771ab2e.chunk.css"
+    "revision": "16daff5cb08451fbf6df",
+    "url": "/nautilus/static/css/main.495eb799.chunk.css"
   },
   {
-    "revision": "b60bd38ba3f37181a9c0acc6cbc1cef2",
+    "revision": "76808d8d389989dcf71f2ee4792a026b",
     "url": "/nautilus/index.html"
   }
 ];
