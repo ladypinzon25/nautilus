@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import Tooltip from '@material-ui/core/Tooltip';
+// import {Tooltip} from "material-ui";
+
 import "./Chip.css"
 
 class Chip extends Component {
@@ -7,9 +8,9 @@ class Chip extends Component {
     return (
       <div className="chip">
         <a href={this.props.link}>
-          <Tooltip title={this.props.name}>
+          {/*<Tooltip title={this.props.name}>*/}
             <img src={this.props.image} className="chip__circle" alt="chip circle"/>
-          </Tooltip>
+          {/*</Tooltip>*/}
         </a>
       </div>
     )

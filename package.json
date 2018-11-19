@@ -3,14 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^3.4.0",
     "datavoyager": "^2.0.0-alpha.24",
     "font-awesome-sass-loader": "^2.0.1",
+    "jss-preset-default": "^4.5.0",
+    "material-ui": "^1.0.0-beta.4",
     "navio": "0.0.12",
     "node-sass": "^4.9.3",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-scripts": "2.1.1"
+    "react-scripts": "2.1.1",
+    "vega": "^4.3.0"
   },
   "scripts": {
     "start": "react-scripts start",

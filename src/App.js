@@ -1,57 +1,107 @@
 import React, {Component} from 'react';
 import './App.css';
-import Navio from 'navio';
+import Home from "./Home";
 
 const libVoyager = require('../node_modules/datavoyager');
 
 class App extends Component {
   state = {
-    voyagerInstance: null
+    voyagerInstance: null,
+    isHome: true,
+    data: ""
   };
 
-  componentDidMount() {
-    const component = this;
-    //NAVIO
-    let nv = window.navio(window.d3.select("#navio"), 300).updateCallback(this.updateVoyager);
+  buildNautilus = (newData) => {
+    if (newData) {
+    const columns = [];
 
-    // NAVIO Step 2. Add the Categorical and Sequential attributes you want to use
-    let catColumns = ["user", "follower_screen_name", "follower_default_profile"];
-    let seqColumns = ["follower_created_at", "follower_favourites_count", "follower_friends_count", "follower_followers_count", "follower_retweet_count", "follower_statuses_count"];
-    catColumns.forEach((c) => nv.addCategoricalAttrib(c));
-    seqColumns.forEach((c) => nv.addSequentialAttrib(c));
-
-    //VOYAGER
-    const container = document.getElementById("voyager-embed");
-
-    // NAVIO Step 3. Load your data!
-    window.d3.csv("/datasets/all_followers_id.csv", function (err, data) {
-      if (err) throw err;
-      const voyagerData = { values: data.splice(0, 500) };
-      nv.data(data);
-      delete voyagerData.values.columns;
-      component.setState({voyagerInstance: libVoyager.CreateVoyager(container, undefined, voyagerData)}, () => {
-        component.state.voyagerInstance.updateData(voyagerData);
+      for (let key in newData[0]) {
+        if (newData[0].hasOwnProperty(key)) {
+          columns.push(key);
+        }
+      }
+      newData.columns = columns;
+      this.setState({isHome: false}, () => {
+        this.initVoyager(newData);
+        this.initNavio(newData);
       });
+    } else {
+      window.d3.csv(this.state.data, (err, data) => {
+        if (err) {
+          throw err;
+        }
+
+        this.initVoyager(data);
+        this.initNavio(data);
+      });
+    }
+  };
+
+  initVoyager = (data) => {
+    const voyagerContainer = document.getElementById("voyager-embed");
+    const voyagerData = {values: data.splice(0, 500)};
+    const voyagerInstance = libVoyager.CreateVoyager(voyagerContainer, undefined, voyagerData);
+
+    delete voyagerData.values.columns;
+
+    this.setState({voyagerInstance}, () => {
+      this.state.voyagerInstance.updateData(voyagerData);
     });
-  }
+  };
+
+  initNavio = (data) => {
+    const nv = window.navio(window.d3.select("#navio"), 300).updateCallback(this.updateVoyager);
+
+    data.columns.forEach(columnName => {
+      if (this.determineColumnType(columnName, data) === "sequential") {
+        nv.addSequentialAttrib(columnName);
+      } else {
+        nv.addCategoricalAttrib(columnName);
+      }
+    });
+
+    nv.data(data);
+  };
+
+  determineColumnType = (columnName, data) => {
+    const max = data.length;
+    const sampleSize = 10;
+    const sample = [];
+
+    for (let i = 0; i < sampleSize; i++) {
+      sample.push(data[Math.floor(Math.random() * max)][columnName]);
+    }
+
+    const areAllElementsNumbers = sample.every(c => !isNaN(c));
+
+    return areAllElementsNumbers ? "sequential" : "categorical";
+  };
 
   updateVoyager = (updatedData) => {
     this.state.voyagerInstance.updateData({values: updatedData});
   };
 
+  loadData = (data) => {
+    this.setState({
+      data,
+      isHome: false
+    }, () => this.buildNautilus())
+  };
 
-  render(){
+  render() {
     return (
       <div className="App">
-        <div>
-          <div id="voyager-embed"/>
-          <div id="navio"/>
-        </div>
+        {this.state.isHome
+          ?
+          <Home loadData={this.loadData} setData={this.buildNautilus}/>
+          :
+          <div>
+            <div id="voyager-embed"/>
+            <div id="navio"/>
+          </div>}
       </div>
     );
   }
 }
-
-
 
 export default App;
