@@ -11,6 +11,7 @@ Nautilus is an application which offers a fulfilling data exploration and visual
 
 To run this project locally please run the follow commands:
 ```js
+cd nautilus
 git clone https://github.com/ljpinzon12/nautilus.git
 npm i
 npm start
