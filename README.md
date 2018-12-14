@@ -7,7 +7,7 @@ Nautilus is an application which offers a fulfilling data exploration and visual
 
 ## Usage
 
-[Nautilus](https://twitter.com/i/status/1073404330303213573)
+![Nautilus](https://raw.githubusercontent.com/ljpinzon12/nautilusPage/master/public/2vjOgz.gif)
 
 To run this project locally please run the follow commands:
 
